@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+List Manager Home
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</nav>
+
+<header class="masthead">
+Rimuovi gli utenti:
+<form method="POST" action="{{ url_for('remove_user') }}">
+    <input type="text" name="user">
+    <button type="submit"> Rimuovi</button>
+</form>
+<p></p>
+<div>
+    Utenti:
+    {% for item in users %}
+    <li>{{ item.username }} ruolo: {{ item.ruolo }}</li>
+    {% endfor %}
+</div>
+</header>
+
+{% endblock %}

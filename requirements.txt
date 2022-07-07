@@ -1,0 +1,7 @@
+Flask
+wtforms
+flask_sqlalchemy
+sqlalchemy
+flask_login
+flask_session
+pyodbc

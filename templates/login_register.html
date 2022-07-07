@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+List Manager Login/Register
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a href="{{ url_for('index') }}">Home</a></li>
+  </div>
+</nav>
+
+<header class="masthead">
+  <div>
+    <h1>Registrati</h1>
+    <form action="/signUp/" class="form" method="post">
+      <input type="text" name="email" autofocus placeholder="E-mail">
+      <input type="text" name="username" autofocus placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+    <p>
+      <a href="{{ url_for('open_map_register') }}"> Voglio creare la mia lista </a>
+    </p>
+  </div>
+
+  <p>
+
+  </p>
+
+  <div>
+    <h1>Accedi</h1>
+    <form action="/logged/" class="form" method="post">
+      <input type="text" name="username_log" autofocus placeholder="Username">
+      <input type="password" name="password_log" placeholder="Password">
+      <p></p>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+
+</header>
+
+{% endblock %}
